@@ -5,7 +5,7 @@
 # Layout: EFI + root (ext4), no separate /home, zram swap 50%
 #
 # Repository layout expected:
-#   install-niri.sh        ← this script
+#   install.sh             ← this script
 #   chroot-setup.sh        ← executed inside arch-chroot
 #   config/
 #     niri/config.kdl
