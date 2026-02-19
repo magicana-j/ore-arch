@@ -98,7 +98,7 @@ Remove the installation media and reboot when prompted.
 | `Mod + Shift + 1–5` | Move window to workspace |
 | `Mod + F` | Maximize column |
 | `Mod + Shift + F` | Fullscreen |
-| `Mod + Shift + L` | Lock screen (swaylock) |
+| `Mod + Alt + L` | Lock screen (swaylock) |
 | `Mod + Shift + E` | Quit Niri |
 | `Print` | Screenshot (region select) |
 

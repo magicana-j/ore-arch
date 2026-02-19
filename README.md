@@ -98,7 +98,7 @@ chmod +x install.sh
 | `Mod + Shift + 1〜5` | ウィンドウをワークスペースへ移動 |
 | `Mod + F` | カラム最大化 |
 | `Mod + Shift + F` | フルスクリーン |
-| `Mod + Shift + L` | swaylock でロック |
+| `Mod + Alt + L` | swaylock でロック |
 | `Mod + Shift + E` | Niri 終了 |
 | `Print` | スクリーンショット（選択範囲）|
 
