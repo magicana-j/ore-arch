@@ -46,8 +46,8 @@ git clone https://github.com/<your-username>/<repo-name>.git
 cd <repo-name>
 
 # 3. Make executable and run
-chmod +x install-niri.sh
-./install-niri.sh
+chmod +x install.sh
+./install.sh
 ```
 
 The script walks through the following steps:

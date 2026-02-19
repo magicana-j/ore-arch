@@ -46,8 +46,8 @@ git clone https://github.com/<your-username>/<repo-name>.git
 cd <repo-name>
 
 # 3. 実行権限を付与して起動
-chmod +x install-niri.sh
-./install-niri.sh
+chmod +x install.sh
+./install.sh
 ```
 
 スクリプトを起動すると以下を順に確認・実行します。
