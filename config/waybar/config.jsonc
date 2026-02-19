@@ -1,0 +1,59 @@
+// Waybar config shared between Niri and Sway.
+// Module names are compositor-prefixed; Waybar loads only what's available.
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+
+    // Niri uses niri/* modules; Sway uses sway/* modules.
+    // Both sets are defined below — unused ones are silently ignored.
+    "modules-left":   ["niri/workspaces", "sway/workspaces",
+                       "niri/window",     "sway/window"],
+    "modules-center": ["clock"],
+    "modules-right":  [
+        "pulseaudio",
+        "network",
+        "cpu",
+        "memory",
+        "tray",
+        "custom/language"
+    ],
+
+    // ── Niri ────────────────────────────────────────────────────────────────
+    "niri/workspaces": { "format": "{index}" },
+    "niri/window":     { "max-length": 60 },
+
+    // ── Sway ────────────────────────────────────────────────────────────────
+    "sway/workspaces": {
+        "format": "{name}",
+        "disable-scroll": true
+    },
+    "sway/window": { "max-length": 60 },
+
+    // ── Shared modules ───────────────────────────────────────────────────────
+    "clock": {
+        "format": "{:%Y-%m-%d  %H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "cpu":    { "format": " {usage}%", "tooltip": false },
+    "memory": { "format": " {}%" },
+    "network": {
+        "format-wifi":         "  {signalStrength}%",
+        "format-ethernet":     " 󰈀 {ipaddr}",
+        "format-disconnected": " 󰖪 Offline",
+        "tooltip-format":      "{ifname}: {essid} {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "format":        "{icon} {volume}%",
+        "format-muted":  "󰝟 ",
+        "format-icons":  { "default": ["", "", ""] },
+        "on-click":      "pavucontrol"
+    },
+    "tray":   { "spacing": 8 },
+    "custom/language": {
+        "exec":     "fcitx5-remote -n 2>/dev/null || echo 'A'",
+        "interval": 2,
+        "format":   "󰌌 {}"
+    }
+}
