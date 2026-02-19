@@ -42,8 +42,8 @@ Automatically sets up a Wayland desktop centered around the **[Niri](https://git
 ```bash
 # 1. Connect to the internet via iwctl
 # 2. Clone this repository
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/magicana-j/ore-arch.git
+cd ore-arch
 
 # 3. Make executable and run
 chmod +x install.sh

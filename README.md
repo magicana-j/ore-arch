@@ -42,8 +42,8 @@ Wayland コンポジタ **[Niri](https://github.com/YaLTeR/niri)** を中心と�
 ```bash
 # 1. iwctl でネットワークに接続しておく
 # 2. リポジトリをクローン
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/magicana-j/ore-arch.git
+cd ore-arch
 
 # 3. 実行権限を付与して起動
 chmod +x install.sh
