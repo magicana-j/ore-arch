@@ -163,14 +163,8 @@ systemctl enable greetd
 info "Configuring fcitx5 environment variables..."
 mkdir -p /etc/environment.d
 cat > /etc/environment.d/fcitx5.conf <<EOF
-# Wayland native applications use input-method-v2 protocol directly.
-# GTK_IM_MODULE and QT_IM_MODULE are only needed for X11 or legacy apps.
-# Uncomment the lines below if GTK3/Qt5 apps do not recognize fcitx5.
-
-# GTK_IM_MODULE=fcitx
-# QT_IM_MODULE=fcitx
-
-# Required for XWayland applications
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
 EOF
 

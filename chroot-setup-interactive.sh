@@ -81,13 +81,25 @@ mkinitcpio -P
 # reflector timer
 # ─────────────────────────────────────────────────────────────────────────────
 info "Configuring reflector service..."
-cat > /etc/xdg/reflector/reflector.conf <<EOF
---country Japan
+
+# Build reflector config with optional country filter
+if [[ -n "${MIRROR_COUNTRY:-}" && "${MIRROR_COUNTRY}" != "Worldwide" ]]; then
+  cat > /etc/xdg/reflector/reflector.conf <<EOF
+--country ${MIRROR_COUNTRY}
 --age 12
 --protocol https
 --sort rate
 --save /etc/pacman.d/mirrorlist
 EOF
+else
+  cat > /etc/xdg/reflector/reflector.conf <<EOF
+--age 12
+--protocol https
+--sort rate
+--save /etc/pacman.d/mirrorlist
+EOF
+fi
+
 systemctl enable reflector.timer
 
 # ─────────────────────────────────────────────────────────────────────────────
