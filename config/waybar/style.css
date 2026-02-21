@@ -26,3 +26,18 @@ window#waybar {
 #network    { color: #89dceb; }
 #pulseaudio { color: #cba6f7; }
 #tray       { padding: 0 4px; }
+#battery {
+  color: #ffffff;
+}
+
+#battery.warning {
+  color: #f0a500;
+}
+
+#battery.critical {
+  color: #ff0000;
+}
+
+#battery.charging {
+  color: #26a65b;
+}

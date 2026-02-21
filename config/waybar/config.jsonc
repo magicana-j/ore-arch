@@ -16,6 +16,7 @@
         "network",
         "cpu",
         "memory",
+	"battery",
         "tray",
         "custom/language"
     ],
@@ -49,6 +50,18 @@
         "format-muted":  "󰝟 ",
         "format-icons":  { "default": ["", "", ""] },
         "on-click":      "pavucontrol"
+    },
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": " {capacity}% {icon}",
+        "format-charging": " {capacity}% 󰂄",
+        "format-plugged": " {capacity}% 󰚥",
+        "format-full": " Full 󰁹",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
     "tray":   { "spacing": 8 },
     "custom/language": {
