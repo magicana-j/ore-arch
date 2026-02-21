@@ -21,7 +21,7 @@ TIMEZONE=""
 MIRROR_COUNTRY=""
 
 # Fonts / IME
-FONTS="otf-ipafont adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts ttf-jetbrains-mono-nerd"
+FONTS="terminus otf-ipafont adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts ttf-jetbrains-mono-nerd"
 IME_PKGS="fcitx5 fcitx5-mozc fcitx5-gtk fcitx5-qt fcitx5-configtool"
 
 # Desktop stack
