@@ -3,6 +3,11 @@
 // Check the wiki for a full description of the configuration:
 // https://yalter.github.io/niri/Configuration:-Introduction
 
+spawn-at-startup "niri msg workspace 1"
+workspace "web"
+workspace "vm"
+workspace "steam"
+
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
@@ -35,10 +40,10 @@ input {
         // dwtp
         // drag false
         // drag-lock
-        natural-scroll
+        // natural-scroll
         // accel-speed 0.2
         // accel-profile "flat"
-        // scroll-method "two-finger"
+        scroll-method "edge"
         // disabled-on-external-mouse
     }
 
@@ -326,6 +331,99 @@ window-rule {
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
+}
+
+// English file dialogs by title
+window-rule {
+    match title=r#"^(Open|Save As?|Choose Files?|Select Files?).*$"#
+    open-floating true
+
+    // Default size on open
+    default-column-width { fixed 800; }
+    default-window-height { fixed 600; }
+
+    // Hard size limits
+    min-width 400
+    max-width 1200
+    min-height 400
+    max-height 400  // must equal min-height to actually cap height
+}
+
+// Japanese file dialogs by title
+window-rule {
+    match title=r#"^(ファイルを開く|名前を付けて保存|保存|ファイルの選択).*$"#
+    open-floating true
+
+    // Default size on open
+    default-column-width { fixed 800; }
+    default-window-height { fixed 600; }
+
+    // Hard size limits
+    min-width 400
+    max-width 1200
+    min-height 400
+    max-height 400  // must equal min-height to actually cap height
+}
+
+window-rule {
+    match title=r#"(Password|パスワード).*$"#
+    open-floating true
+
+    // Default size on open
+    default-column-width { fixed 800; }
+    default-window-height { fixed 600; }
+
+    // Hard size limits
+    min-width 400
+    max-width 1200
+    min-height 400
+    max-height 400  // must equal min-height to actually cap height
+}
+
+window-rule {
+    match title=r#"(機能拡張|Extension).*$"#
+    open-floating true
+
+    // Default size on open
+    default-column-width { fixed 800; }
+    default-window-height { fixed 600; }
+
+    // Hard size limits
+    min-width 400
+    max-width 1200
+    min-height 400
+    max-height 400  // must equal min-height to actually cap height
+}
+
+// Portal-based file picker (language-independent, recommended)
+window-rule {
+    match app-id=r#"^org\.freedesktop\.impl\.portal\.desktop\."#
+    open-floating true
+
+    // Default size on open
+    default-column-width { fixed 800; }
+    default-window-height { fixed 600; }
+
+    // Hard size limits
+    min-width 400
+    max-width 1200
+    min-height 400
+    max-height 400  // must equal min-height to actually cap height
+}
+
+window-rule {
+    match app-id="firefox"
+    open-on-workspace "web"
+}
+
+window-rule {
+    match app-id="VirtualBoxVM"
+    open-on-workspace "vm"
+}
+
+window-rule {
+    match app-id="steam"
+    open-on-workspace "steam"
 }
 
 // Example: block out two password managers from screen capture.
